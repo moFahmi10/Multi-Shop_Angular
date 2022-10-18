@@ -1,6 +1,7 @@
 import { state } from '@angular/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './views/cart/cart.component';
 import { HomeComponent } from './views/home/home.component';
 import { ShopComponent } from './views/shop/shop.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'cart', component: CartComponent },
   { path: 'shop-detail/:productId', component: ShopeDetailComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

@@ -18,7 +18,9 @@ import { CartRowComponent } from './components/cart-row/cart-row.component';
 import { RecentProductsComponent } from './components/recent-products/recent-products.component';
 import { ShopeDetailComponent } from './views/shope-detail/shope-detail.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,13 +39,16 @@ import { HttpClientModule } from '@angular/common/http';
     CartRowComponent,
     RecentProductsComponent,
     ShopeDetailComponent,
+    LoginComponent,
+    RegisterComponent,
 
       
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

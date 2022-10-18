@@ -4,7 +4,7 @@ import { OrderDetails } from 'src/app/interfaces/order';
 import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-shope-detail',
@@ -28,20 +28,34 @@ export class ShopeDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    let allProds: Array<Product> = [];
-    this.productService.getAllProducts().subscribe((res:any)=>{
-      allProds = res.data
-      for(let product of allProds){
-        console.log(product)
-        if (product._id === this.productId)
-        this.product = product;
-      }
-    },(err:any)=>{console.log(err)});
-
-   
-    
+    this.productService.getProductById(this.productId).subscribe((res:any)=>{
+      this.product = res.data
+    },(err:any)=>{console.log(err)})
     }
+
+  //  runJqueryForCarousel(){
+  //   $('.related-carousel').owlCarousel({
+  //     loop: true,
+  //     margin: 29,
+  //     nav: false,
+  //     autoplay: true,
+  //     smartSpeed: 1000,
+  //     responsive: {
+  //         0:{
+  //             items:1
+  //         },
+  //         576:{
+  //             items:2
+  //         },
+  //         768:{
+  //             items:3
+  //         },
+  //         992:{
+  //             items:4
+  //         }
+  //     }
+  // });
+  //  }
   
   incQuantity(){
     this.quantity++;
