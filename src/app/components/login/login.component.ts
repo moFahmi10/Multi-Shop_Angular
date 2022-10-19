@@ -6,6 +6,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,13 +20,20 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6),
     ]),
   });
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
   }
 
   login(){
-    if( this.loginForm.valid)
-    console.log(this.loginForm.value)
+
+    if( this.loginForm.valid){
+      this.authService.login(this.loginForm.value).subscribe((res:any)=>{
+          console.log(res);
+          this.authService.saveLoginData(res);
+      },(err:any)=>{console.log(err)});
+    }
+    
+
   }
 }
