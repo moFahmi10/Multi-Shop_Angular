@@ -14,11 +14,18 @@
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                            {{ authService.hasLoginData()? authService.getName(): 'My Account' }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" *ngIf="!authService.hasLoginData()">
                             <a class="dropdown-item" type="button" routerLink="login" >Sign in</a>
                             <a class="dropdown-item" type="button" >Sign up</a>
                         </div>
+                        <div class="dropdown-menu dropdown-menu-right" *ngIf="authService.hasLoginData()">
+                            <a class="dropdown-item" type="button"  (click)="authService.logOut()" href=""  >Log Out</a>
+                           
+                        </div>
+
                     </div>
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>

@@ -1,5 +1,5 @@
 
-<form [formGroup]="loginForm"  (ngSubmit)="login()">
+<form [formGroup]="loginForm"  (ngSubmit)="login()"   >
 <div>
     <label>Username</label>
     <input placeholder="Enter Username" formControlName="username" />
@@ -12,6 +12,6 @@
 </div>
 <div *ngIf="loginForm.controls['password']?.errors?.['required']" class="text-danger"> password cannot be empty</div>
 <div *ngIf="loginForm.controls['password']?.errors?.['minlength']" class="text-danger"> password length must be greater than 6</div>
-<button type="submit">Login</button>
+<button type="submit" >Login</button>
 
 </form>

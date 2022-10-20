@@ -6,6 +6,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6),
     ]),
   });
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -31,8 +32,13 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginForm.value).subscribe((res:any)=>{
           console.log(res);
           this.authService.saveLoginData(res);
-      },(err:any)=>{console.log(err)});
+          window.location.assign("");
+          
+      },(err:any)=>{console.log(err)
+          alert("Incorrect Email or Password");
+      });
     }
+
     
 
   }
