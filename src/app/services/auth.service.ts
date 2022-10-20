@@ -36,7 +36,16 @@ export class AuthService {
   getName():string{
     return this.loadLoginData()?.first_name ; 
   }
+  getLastName():string{
+    return this.loadLoginData()?.last_name ; 
+  }
   
+  getUserId():string{
+    return this.loadLoginData()?._id ; 
+  }
+  getEmail():string{
+    return this.loadLoginData()?.email;
+  }
   logOut(){
     localStorage.removeItem('loginData');
     this.router.navigate(['']);

@@ -19,6 +19,12 @@ getSubTotal():number{
     }
     return subTotal;
 }
+getShipping():number{
+    return 0.1*this.getSubTotal();
+}
+getTotalPrice(){
+  return  Number((0.1*this.getSubTotal() + this.getSubTotal()).toFixed(2) )
+}
 
 
 }
@@ -31,11 +37,11 @@ export class OrderDetails{
     constructor(product:Product){
         this.product = product;
         this.quantity = 1;
-        this.price = (product.price - product.discount*product.price);
+        this.price = Number((product.price - product.discount*product.price).toFixed(2));
     }
     addProduct(product:Product){
         this.product;
-        this.price = (product.price - product.discount*product.price);
+        this.price = Number((product.price - product.discount*product.price).toFixed(2));
     }
     incQuantity(){
         this.quantity++;

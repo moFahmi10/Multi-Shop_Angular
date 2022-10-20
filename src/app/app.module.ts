@@ -22,6 +22,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './views/checkout/checkout.component';
+import { CheckoutProdComponent } from './components/checkout-prod/checkout-prod.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CheckoutComponent } from './views/checkout/checkout.component';
     LoginComponent,
     RegisterComponent,
     CheckoutComponent,
+    CheckoutProdComponent,
 
       
   ],
