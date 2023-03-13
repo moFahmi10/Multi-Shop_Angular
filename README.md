@@ -1,4 +1,7 @@
 # MyApp
+![Shop](https://user-images.githubusercontent.com/83909880/224829854-9ec8497e-4595-4f2a-bf59-4660afa349de.png)
+![cart](https://user-images.githubusercontent.com/83909880/224829881-830b8ce7-25b1-4432-8e4b-7edaa4d634ca.png)
+![checkout](https://user-images.githubusercontent.com/83909880/224829896-7a4a4ec6-8f78-4b43-8d28-ddc850791692.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
